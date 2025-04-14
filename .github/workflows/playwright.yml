@@ -10,7 +10,7 @@ jobs:
   playwright-tests:
     runs-on: ubuntu-latest
     env:
-      BASE_URL: HEADED: "0"
+      HEADED: 0
       BROWSER: "chromium"
     steps:
       - name: Checkout repository
