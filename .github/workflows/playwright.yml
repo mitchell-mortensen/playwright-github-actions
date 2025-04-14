@@ -9,10 +9,6 @@ on:
 jobs:
   playwright-tests:
     runs-on: ubuntu-latest
-    env:
-      HEADED: 0
-      HEADLESS: 1
-      BROWSER: "chromium"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,6 +26,9 @@ jobs:
         
       - name: Run Playwright Tests
         run: dotnet test --configuration Release --logger "trx"
+        env:
+          HEADED: 0
+          BROWSER: "chromium"
      
       - name: Upload test results
         if: always()
