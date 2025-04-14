@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HEADED: 0
+      HEADLESS: 1
       BROWSER: "chromium"
     steps:
       - name: Checkout repository
