@@ -26,10 +26,9 @@ jobs:
         run: dotnet build --configuration Release
         
       - name: Run Playwright Tests
-        run: |
-          dotnet test --configuration Release --logger "trx"
+        run: dotnet test --configuration Release --logger "trx"
      
-     - name: Upload test results
+      - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
