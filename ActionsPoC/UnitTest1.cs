@@ -11,7 +11,7 @@ public class ExampleTests : PageTest
     {
         
         Environment.SetEnvironmentVariable("BROWSER", "chromium");
-        Environment.SetEnvironmentVariable("HEADED", "1");
+        Environment.SetEnvironmentVariable("HEADED", "0");
         Environment.SetEnvironmentVariable("PWDEBUG", "0");
         InstallPlaywright();
     }
