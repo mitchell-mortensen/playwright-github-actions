@@ -27,10 +27,15 @@ jobs:
 
       - name: Install Playwright Browsers
         run: |
-          cd ActionsPoC
-          playwright install
+          ActionsPoC/bin/Debug/net8.0/playwright.ps1 install
 
       - name: Run Playwright Tests
         run: |
           cd ActionsPoC
           dotnet test --configuration Release --logger "trx"
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ActionsPoC/TestResults
