@@ -27,7 +27,8 @@ jobs:
       - name: Run Playwright Tests
         run: dotnet test --configuration Release --logger "trx"
         env:
-          HEADED: 0
+          HEADED: false
+          headless: true
           BROWSER: "chromium"
      
       - name: Upload test results
